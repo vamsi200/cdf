@@ -1,13 +1,14 @@
 fn main() {
     let mut input = String::new();
     std::io::stdin().read_line(&mut input).expect("err");
-    let parset_input: i32 = input.trim().parse().expect("err");
-    int count = 0;
-    for i in 1..6 {
-        if parset_input == i {
-            println!("1");
-        } else {
-                
-        }
+    let parsed_input: i32 = input.trim().parse().expect("err");
+
+    let moves = parsed_input / 5;
+    let rem = parsed_input % 5;
+
+    if rem > 0 {
+        println!("{}", moves + 1);
+    } else {
+        println!("{}", moves);
     }
 }
